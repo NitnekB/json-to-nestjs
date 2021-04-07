@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON-to-NestJS: Convert JSON to NestJS DTO instantly</title>
+    <meta charset="UTF-8">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js').then(function(reg) {
+          console.log('Successfully registered service worker', reg);
+        }).catch(function(err) {
+          console.warn('Error whilst registering service worker', err);
+        })
+      }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J22RJ1MRDS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-J22RJ1MRDS');
+    </script>
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/highlight.min.js"></script>
+    <script src="resources/js/json-to-nest.js"></script>
+    <script src="resources/js/common.js"></script>
+    <link rel="stylesheet" href="resources/css/tomorrow.highlight.css">
+    <link rel="stylesheet" href="resources/css/common.css">
+  </head>
+  <body>
+    <header>
+      <div class="intro">
+        <div class="title">
+          <h1>JSON-to-NestJS</h1>
+          <h2>Convert JSON to NestJS DTO</h2>
+        </div>
+        <div>
+          <p>
+            This tool instantly converts JSON into a NestJS DTO definition.
+            Paste a JSON structure on the left and the equivalent DTO will be generated to the right, which you can paste into your program.
+            The script has to make some assumptions, so double-check the output!
+          </p>
+          <p>
+            <a href="javascript:" id="dark" class="dark-mode-btn">Dark mode</a>
+          </p>
+        </div>
+        <div>
+          <img src="https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg" id="brand">
+        </div>
+      </div>
+    </header>
+    <table>
+      <tr>
+        <th style="width: 45%;">JSON</th>
+        <th style="width: 10%; font-size: 22px;">&#8594;</th>
+        <th style="width: 45%;">NestJS<label><input type="checkbox" id="inline" checked>DTO/INTERFACE</label></th>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td style="width: 50%;">
+          <div id="input" contenteditable></div>
+        </td>
+        <td style="width: 50%;">
+          <span class="copy" id="copy-btn">Copy to clipboard</span>
+          <div id="output"></div>
+        </td>
+      </tr>
+    </table>
+
+    <footer>
+      &copy; 2021 NitnekB
+      &bull; <a href="https://github.com/NitnekB/json-to-nestjs">View on GitHub</a>
+    </footer>
+  </body>
+</html>
